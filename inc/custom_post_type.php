@@ -3,25 +3,25 @@
 add_action('init', 'create_sample_post_type');
 function create_sample_post_type(){
 
-	register_post_type( 'home_slider',
+	register_post_type( 'sample',
             array(
                 'labels' => array(
-                    'name' => 'Home Slideshow',
-                    'singular_name' => 'Home Slideshow',
-                    'add_new' => 'Add New Slideshow',
+                    'name' => 'Sample',
+                    'singular_name' => 'Sample',
+                    'add_new' => 'Add New Sample',
                     'add_new_item' => 'Add New Sample',
                     'edit' => 'Edit',
-                    'edit_item' => 'Edit Slideshow',
-                    'new_item' => 'New Slideshow',
-                    'view' => 'View Slideshow',
-                    'view_item' => 'View Slideshow',
-                    'search_items' => 'Search Slideshow',
-                    'not_found' => 'No Slideshow found',
-                    'not_found_in_trash' => 'No Home Slideshow found in Trash',    
+                    'edit_item' => 'Edit Sample',
+                    'new_item' => 'New Sample',
+                    'view' => 'View Sample',
+                    'view_item' => 'View Sample',
+                    'search_items' => 'Search Sample',
+                    'not_found' => 'No Sample found',
+                    'not_found_in_trash' => 'No Sample found in Trash',    
                 ),
                 'public' => true,
                 'menu_position' => 15,
-                'supports' => array('title', 'editor', 'thumbnail'),
+                'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
                 'taxonomies' => array( '' ),
                 'menu_icon' => 'dashicons-images-alt2',
                 'has_archive' => true

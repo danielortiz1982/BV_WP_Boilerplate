@@ -2,7 +2,6 @@
 
 add_action('after_setup_theme', 'BV_Boilerplate_Setup');
 function BV_Boilerplate_Setup(){
-	
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );	
@@ -13,7 +12,6 @@ function BV_Boilerplate_Setup(){
 		'gallery',
 		'caption',
 		));
-
 	add_theme_support('post-formats', array(
 		'aside',
 		'image',
@@ -21,7 +19,6 @@ function BV_Boilerplate_Setup(){
 		'quote',
 		'link',
 		));
-
 	add_theme_support('custom-background', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
@@ -33,10 +30,8 @@ function BV_Boilerplate_Setup(){
 		));
 }
 // end of BV_Boilerplate_Setup
-
 add_action('widgets_init', 'BV_Boilerplate_Widgets_Init');
 function BV_Boilerplate_Widgets_Init(){
-
 	register_sidebar( array(
 		'name'          => esc_html__( 'BV Widget', 'BV Widget' ),
 		'id'            => 'BV-Widget',
@@ -46,10 +41,8 @@ function BV_Boilerplate_Widgets_Init(){
 		));
 }
 //end of BV_Boilerplate_Widgets_Init
-
 add_action('wp_enqueue_scripts', 'BV_Boilerplate_Scripts');
 function BV_Boilerplate_Scripts(){
-
 	wp_enqueue_style( 'BV-Boilerplate-style', get_stylesheet_uri() );
 	wp_enqueue_script('BV-Boilerplate-jquery', get_template_directory_uri() . '/js/jquery.min.js');
 	wp_enqueue_script('BV-Boilerplate-angularjs', get_template_directory_uri() . '/js/angular.min.js');
@@ -57,7 +50,12 @@ function BV_Boilerplate_Scripts(){
 	wp_enqueue_script('BV-Boilerplate-mainjs', get_template_directory_uri() . '/js/main.js');
 	wp_enqueue_script('BV-Boilerplate-app', get_template_directory_uri() . '/js/app.js');
 }
-
+function admin_style() {
+  wp_enqueue_style('admin-styles', get_template_directory_uri().'/css/admin.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
 require('inc/custom_post_type.php');
+require('inc/custom_taxonomies.php');
+require('inc/custom_meta_boxes.php');
 
 

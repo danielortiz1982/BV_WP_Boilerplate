@@ -1,5 +1,5 @@
     	<footer class="footer">
-    		<h5>&copy; <?php echo date('Y'); ?> <?php echo "BV Boilerplate All Rights Reserved."; ?></h5>
+    		<h5><?php echo date('Y'); ?> &copy; <?php echo "BV Boilerplate All Rights Reserved."; ?></h5>
     	</footer>
     	<?php wp_footer(); ?>
     </body>
