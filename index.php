@@ -1,18 +1,15 @@
 <?php get_header(); ?>
-
 <main class="site-content" ng-controller="wpCtrl">
-	<!-- <input ng-model="bvPostSearch" placeholder="Search Post...">
-	<div ng-repeat="bvPost in bvPosts">
-		<div id="post-id-{{bvPost.postID}}">
-			<h1>{{bvPost.title}}</h1>
-			<h4>{{bvPost.author}}</h4>
-			<div class="post-thumbnail"><img ng-src="{{bvPost.thumbnail}}" /></div>
-			<p>{{bvPost.theContent}}</p>
-		</div>
-
-	</div> -->
-
 	<div ng-view></div>
+	<div class="contentBox">
+		<?php if(have_posts() ) : while(have_posts() ) : the_post(); ?>
+		<div class="<?php post_class(); ?>">
+			<h1 class="the-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+			<div class="post-thumbnail"><a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>" /></a></div>
+			<div class="the-content"><?php the_content(); ?></div>
+		</div>
+			<?php endwhile ?>
+		<?php endif ?>
+	</div>
 </main>
-
 <?php get_footer(); ?>
