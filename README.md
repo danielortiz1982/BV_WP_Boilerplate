@@ -12,4 +12,4 @@ To edit the [LESS](http://lesscss.org/) and styles of the boilerplate, navigate 
 The Boilerplate is **ES2015/ES6** compatible. To build the frontend open the project root in a terminal window. Run the (**_npm run build_**) command. If you do not have [Babel installed you can click here](https://babeljs.io/docs/setup/), be sure to install with npm(**-g**).
 
 #Wordpress Custom Post Types
-To create a new [custom post type](https://codex.wordpress.org/Function_Reference/register_post_type), reference the (**_inc/custom_post_type.php_**). In this file you can find a working sample CPT, copy and rename both the add_action and function name (**_create_sample_post_type_**). Update the (**_register_post_type name and array_**) settings to your new CPT. 
+To create a new [custom post type](https://codex.wordpress.org/Function_Reference/register_post_type), reference the (**_inc/custom_post_type.php_**). In this file you will find a working sample CPT, copy and rename both the **_add_action_** and function name (**_create_sample_post_type_**). Update the (**_register_post_type name and array_**) settings to your new CPT. 
