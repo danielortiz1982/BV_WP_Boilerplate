@@ -26,3 +26,5 @@ To create a new [custom meta box](https://developer.wordpress.org/reference/func
 3. Radio (**_$sample_radio_txt_**)
 4. Textarea (**_$sample_textarea_txt_**)
 
+#Wordpress Custom API Endpoints
+ To create a new **_custom endpoint_** to use a frontend framework like [Angularjs](https://angularjs.org/), [React](https://facebook.github.io/react/), [Backbone](http://backbonejs.org/), [Vuejs](https://vuejs.org/) or [Nodejs](https://nodejs.org/en/), reference the (WP_Sample_API.php). Copy this file and create a new template page, paste in the code from WP_Sample_API.php and modify the post_type in the $args array.
