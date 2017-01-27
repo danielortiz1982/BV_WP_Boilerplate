@@ -11,12 +11,7 @@
   "devDependencies": {
     "babel-cli": "*",
     "babel-preset-es2015": "*",
-    "grunt": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-less": "^1.4.0",
-    "grunt-contrib-nodeunit": "*",
-    "grunt-contrib-uglify": "*"
+    "grunt": "*"
   },
   "dependencies": {
     "body-parser": "*",
