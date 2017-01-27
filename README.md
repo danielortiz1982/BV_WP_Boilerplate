@@ -1,5 +1,5 @@
 # BrandingVerticals Wordpress Boilerplate.
-**Wordpress SPA ~ ** This is a custom theme App with a **Angularjs** frontend!  
+**Wordpress SPA** ~ This is a custom theme App with a **Angularjs** frontend!  
 
 
 #Install Instructions
