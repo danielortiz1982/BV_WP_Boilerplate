@@ -13,3 +13,5 @@ The Boilerplate is **ES2015/ES6** compatible. To build the frontend open the pro
 
 #Wordpress Custom Post Types
 To create a new custom post type, reference the (**_inc/custom_post_type.php_**). In this file you can find a working sample CPT, copy and rename both the add_action and function name (**_create_sample_post_type_**). Update the (**_register_post_type name and array_**) settings to your new CPT. 
+
+[I'm an inline-style link](https://www.google.com)
