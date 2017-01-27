@@ -17,7 +17,7 @@ To create a new [custom post type](https://codex.wordpress.org/Function_Referenc
 #Wordpress Custom Meta Boxes
 To create a new [custom meta box](https://developer.wordpress.org/reference/functions/add_meta_box/), reference the (**_inc/custom_meta_boxes.php_**). In this file you will find a working sample meta box (add_sample_meta). This meta box is displaying on the (**_create_sample_post_type_**) by default. This sample CPT and Meta Box are a template and should be used as a starting point in building your very own custom content types & data inputs. 
 
-### Different sample input 
+### Different Sample Input 
 1. Input text (**_$sample_input_txt_**)
 2. Select (**_$sample_select_txt_**)
 3. Radio (**_$sample_radio_txt_**)
