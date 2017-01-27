@@ -11,4 +11,5 @@ To edit the css and styles of the boilerplate, navigate to ~ (/less/style.less).
 #JavaScript ES2015/ES6
 The Boilerplate is ES2015/ES6 compatible. To build the frontend open the project root in a terminal window. Run the (npm run build) command. If you do not have Babel installed, make sure it is installed with npm(-g).
 
-
+#Wordpress Custom Post Types
+To create a new custom post type, reference the (inc/custom_post_type.php). In this file you can find a working sample CPT, rename both the add_action and function name (create_sample_post_type). Update the register_post_type name and array settings to your new CPT. 
