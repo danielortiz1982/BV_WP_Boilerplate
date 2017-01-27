@@ -1,0 +1,26 @@
+{
+  "name": "BV_WP_Boilerplate",
+  "version": "1.2.0",
+  "description": "Wordpress SPA ~ This is a custom theme App with a Angularjs twist!",
+  "main": "server.js",
+  "scripts": {
+    "build": "babel --presets es2015 js/ES6 -d js"
+  },
+  "author": "Daniel Ortiz @danielortiz1982",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-preset-es2015": "*",
+    "grunt": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-nodeunit": "*",
+    "grunt-contrib-uglify": "*"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "less": "*",
+    "mongoose": "*"
+  }
+}
