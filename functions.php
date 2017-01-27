@@ -44,9 +44,9 @@ function BV_Boilerplate_Widgets_Init(){
 add_action('wp_enqueue_scripts', 'BV_Boilerplate_Scripts');
 function BV_Boilerplate_Scripts(){
 	wp_enqueue_style( 'BV-Boilerplate-style', get_stylesheet_uri() );
-	wp_enqueue_script('BV-Boilerplate-jquery', get_template_directory_uri() . '/js/jquery.min.js');
-	wp_enqueue_script('BV-Boilerplate-angularjs', get_template_directory_uri() . '/js/angular.min.js');
-	wp_enqueue_script('BV-Boilerplate-angular-route', get_template_directory_uri() . '/js/angular-route.min.js');
+	wp_enqueue_script('BV-Boilerplate-jquery', get_template_directory_uri() . '/js/lib/jquery.min.js');
+	wp_enqueue_script('BV-Boilerplate-angularjs', get_template_directory_uri() . '/js/lib/angular.min.js');
+	wp_enqueue_script('BV-Boilerplate-angular-route', get_template_directory_uri() . '/js/lib/angular-route.min.js');
 	wp_enqueue_script('BV-Boilerplate-mainjs', get_template_directory_uri() . '/js/main.js');
 	wp_enqueue_script('BV-Boilerplate-app', get_template_directory_uri() . '/js/app.js');
 }
