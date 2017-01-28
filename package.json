@@ -1,7 +1,7 @@
 {
   "name": "BV_WP_Boilerplate",
   "version": "1.2.0",
-  "description": "Wordpress SPA ~ This is a custom theme App with a Angularjs twist!",
+  "description": "Wordpress SPA ~ This is a custom theme App with a Angularjs Frontend!",
   "main": "server.js",
   "scripts": {
     "build": "babel --presets es2015 js/ES6 -d js"
