@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?> ng-app="bvBoilerplate">
     <head>
         <base href="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
