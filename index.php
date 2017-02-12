@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <main class="site-content">
 	<div class="contentBox">
+		{{sample}}
 		<?php if(have_posts() ) : while(have_posts() ) : the_post(); ?>
 		<div class="<?php post_class(); ?>">
 			<h1 class="the-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
