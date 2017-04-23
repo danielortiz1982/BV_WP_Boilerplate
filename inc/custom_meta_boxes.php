@@ -11,6 +11,8 @@
 	        $sample_select_txt 	 = isset( $values['sample_select'] ) ? esc_attr( $values['sample_select'][0] ) : '';
 	        $sample_radio_txt 	 = isset( $values['sample_radio'] ) ? esc_attr( $values['sample_radio'][0] ) : '';
 	        $sample_textarea_txt 	 = isset( $values['sample_textarea'] ) ? esc_attr( $values['sample_textarea'][0] ) : '';
+	        $filearray = get_post_meta( get_the_ID(), 'sample_file_upload', true );
+			$this_file = $filearray['url'];
 	        ?>
 
 	        <div class="meta-wrapper">
@@ -41,6 +43,13 @@
 			  <textarea name="sample_textarea"><?php echo $sample_textarea_txt; ?></textarea>
 			</div>
 
+			<div class="meta-wrapper">
+				<label for="sample_file_upload">Upload your PDF here:</label>
+				<input type="file" id="sample_file_upload" name="sample_file_upload" value="" />
+				<a href="<?php echo $this_file; ?>" target="_blank"><?php echo $this_file; ?></a>
+
+			</div>
+
 	        <?php
 	    }
 	    // end of dislpay_sample_meta
@@ -59,5 +68,21 @@
 	            update_post_meta( $post_id, 'sample_radio', wp_kses( $_POST['sample_radio'], $allowed ) );
 	        if( isset( $_POST['sample_textarea'] ) )
 	            update_post_meta( $post_id, 'sample_textarea', wp_kses( $_POST['sample_textarea'], $allowed ) );
+	        if(!empty($_FILES['sample_file_upload']['name'])) {
+		        $supported_types = array('application/pdf');
+		        $arr_file_type = wp_check_filetype(basename($_FILES['sample_file_upload']['name']));
+		        $uploaded_type = $arr_file_type['type'];
+		        if(in_array($uploaded_type, $supported_types)) {
+		            $upload = wp_upload_bits($_FILES['sample_file_upload']['name'], null, file_get_contents($_FILES['sample_file_upload']['tmp_name']));
+		            if(isset($upload['error']) && $upload['error'] != 0) {
+		                wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
+		            } else {
+		                update_post_meta($post_id, 'sample_file_upload', $upload);
+		            }
+		        }
+		        else {
+		            wp_die("The file type that you've uploaded is not a PDF.");
+		        }
+		    }
 	    }
 	    // end of sample_meta_box_save ~~~>
