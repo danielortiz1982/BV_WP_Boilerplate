@@ -81,7 +81,7 @@
 		            }
 		        }
 		        else {
-		            wp_die("The file type that you've uploaded is not a PDF.");
+		            wp_die("The file type that you've uploaded is not a PDF. " . '<a href="#" onclick="history.back();">Return to Post</a>');
 		        }
 		    }
 	    }
