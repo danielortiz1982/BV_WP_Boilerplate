@@ -11,6 +11,7 @@
 // Variable Sizes 
 @fullWidth: 100%;
 @contentBox: 90%;
+@footerHeight: 5em;
 
 
 // Variable Mix Ins
@@ -32,7 +33,12 @@
 
 @font-face {
   font-family: 'GothamBold';
-  src: url('../fonts/Gotham Bold/Gotham Bold.otf');
+  src: url('../fonts/GothamBold/GothamBold.otf');
+}
+
+@font-face {
+  font-family: 'GothamBookRegular';
+  src: url('../fonts/GothamBookRegular/GothamBookRegular.otf');
 }
 // end of fonts
 
@@ -43,11 +49,21 @@ html{
   	box-sizing: border-box;
 	body{
 		min-height: @fullWidth;
+		font-family: GothamBookRegular;
+		font-size: 100%;
+		background-color: @white;
 		.position();
 		.margin();
 		.padding();
-		background-image: url(../../images/background.png);
-		background-repeat: repeat;
+		h1, h2, h3, h4, h5, h6{
+			text-align: left;
+			font-family: GothamBold;
+			.padding(.5em 0)
+		}
+		strong{
+			color: @orange;
+			font-weight: bold;
+		}
 		a{
 			color: @black;
 			text-decoration: none;
@@ -68,6 +84,8 @@ html{
 
 			.site-header{
 				width: @fullWidth;
+				background-image: url(../../images/background.png);
+				background-repeat: repeat;
 				.margin();
 				.padding();
 				.display();
@@ -112,7 +130,7 @@ html{
 
 				nav{
 					width: @contentBox;
-					height: 5em;
+					height: 4em;
 					border-left: solid 1px @darkGrey;
 					.margin();
 					.padding();
@@ -126,21 +144,12 @@ html{
 
 						.current-menu-ancestor{
 							background-color: @orange;
-							a{
-								color: @darkGrey;
-							}
 						}
 						.current-menu-item{
 							background-color: @orange;
-							a{
-								color: @darkGrey;
-							}
 						}
 						.current_page_parent{
 							background-color: @orange;
-							a{
-								color: @darkGrey;
-							}
 						}
 
 						a{
@@ -149,7 +158,7 @@ html{
 							text-decoration: none !important;
 							border-right: solid 1px @darkGrey;
 							.display();
-							.padding(2em);
+							.padding(1.5em 2em);
 
 							&:hover{
 								color: @darkGrey;
@@ -205,7 +214,7 @@ html{
 			.site-content{
 				width: @fullWidth;
 				background-color: @white;
-				.margin();
+				.margin(0 0 @footerHeight + 5px 0);
 				.padding();
 				.display();
 
@@ -217,13 +226,34 @@ html{
 
 					.the-title{
 						width: @fullWidth;
-						font-size: 2.4em;
+						font-size: 2.8em;
 						text-align: left;
 						font-family: GothamBold;
 						text-decoration: underline;
+						letter-spacing: .04em;
 						.margin();
 						.padding(.5em 0);
 						.display();
+					}
+
+					.the-content{
+						font-size: 1.4em;
+						text-align: left;
+						line-height: 1.3em;
+						p{
+							.padding(.5em 0);
+							.margin();
+							.display();
+						}
+						h1{
+							font-size: 2em;
+						}
+						h2{
+							font-size: 1.8em;
+						}
+						h3{
+							font-size: 1.6em;
+						}
 					}
 				}
 			}
@@ -231,17 +261,27 @@ html{
 
 			.footer{
 				width: @fullWidth;
-				height: 5em;
+				height: @footerHeight;
 				text-align: center;
+				color: @white;
 				background-color: @black;
-				.margin();
-				.padding();
-				.display();
-
-				position: absolute;
 				right: 0;
 				bottom: 0;
 				left: 0;
+				border-top: solid 5px @orange;
+				.margin();
+				.padding();
+				.display();
+				.position(absolute);
+				.contentBox{
+					width: @contentBox;
+					p{
+						font-size: .8em;
+						color: @orange;
+						.margin();
+						.padding(2.5em 0 0 0);
+					}
+				}
 			}
 			//end of .footer
 		}

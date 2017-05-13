@@ -62,3 +62,7 @@ function update_edit_form() {
 require('inc/custom_post_type.php');
 require('inc/custom_taxonomies.php');
 require('inc/custom_meta_boxes.php');
+
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
