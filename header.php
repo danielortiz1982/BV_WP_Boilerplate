@@ -14,7 +14,7 @@
     <body <?php body_class(); ?>>
         <div class="wrapper">
             <header class="site-header">
-                <h1 class="site-brand"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-                <h2 class="site-description"><?php bloginfo('description'); ?></h2>
-                <div class="navigationBox"><nav><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'header-menu' ) ); ?></nav></div>
+                <figure class="header_logo"><div class="logo"><img src="<?php echo get_template_directory_uri(); ?>/images/BV_Boilerplate_Logo.png"></div></figure>
             </header>
+
+            <div class="navigation-box"><nav><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'header-menu' ) ); ?></nav></div>
