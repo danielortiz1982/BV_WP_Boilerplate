@@ -14,7 +14,7 @@
     <body <?php body_class(); ?>>
         <div class="wrapper">
             <header class="site-header">
-                <figure class="header_logo"><div class="logo"><img src="<?php echo get_template_directory_uri(); ?>/images/BV_Boilerplate_Logo.png"></div></figure>
+                <figure class="header_logo"><div class="logo"><a href="/"><img src="<?php echo get_template_directory_uri(); ?>/images/BV_Boilerplate_Logo.png"></a></div></figure>
             </header>
 
             <div class="navigation-box"><nav><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'header-menu' ) ); ?></nav></div>
