@@ -71,7 +71,9 @@ html{
 		}
 		
 		.header{
-
+			width: 90%;
+			.margin();
+			.padding();
 			.logo{
 
 				width: 50%;
@@ -86,21 +88,46 @@ html{
 				.padding();
 				.margin(0);
 			}
+			.navbar-default{
+				background-color: @black;
+				.navbar-nav{
+					li{
+						a{
+							color: @white;
+						}
+					}
+				}
+			}
 		}
 
 		.site-content{
-
+			width: 90%;
+			.margin();
+			.padding();
 			.post-thumbnail{
 				width: @fullWidth;
 				.display();
 				.padding();
 				.margin();
 			}
+			.slider-box{
+				width: 100%;
+				.display();
+				.position();
+				.margin();
+				.padding(0 0 3em 0);
+			}
+			.post-content{
+				.padding(2em 0);
+				.margin();
+				.display();
+			}
 			.side-bar{
 				background-color: #e7e7e7;
 				width: 65%;
 				.margin();
-				.padding(10em);
+				.padding(5em);
+				.float(right);
 				border-radius: 10px;
 				ul{
 					padding-left: 2em;

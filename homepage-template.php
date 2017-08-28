@@ -4,30 +4,32 @@
 <main class="site-content">
 	<div class="row">
 		<div class="col-md-12">
-			<div id="homepage-carousel" class="carousel slide" data-ride="carousel">
-			    <!-- Wrapper for slides -->
-			    <div class="carousel-inner">
-			      <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-			      <div class="item <?php if( $the_query->current_post == 0 ): ?>active<?php endif; ?>">
-			        <a href=""><?php echo  the_post_thumbnail(); ?></a>
-			        <div class="carousel-caption"><h2><?php the_content(); ?></h2></div>
-			      </div>
-			      <?php endwhile; endif; ?>
-			      <?php wp_reset_postdata(); ?>
-			    </div>
-		  </div><!-- End Carousel -->
+			<div class="slider-box">
+				<div id="homepage-carousel" class="carousel slide" data-ride="carousel">
+				    <!-- Wrapper for slides -->
+				    <div class="carousel-inner">
+				      <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+				      <div class="item <?php if( $the_query->current_post == 0 ): ?>active<?php endif; ?>">
+				        <a href=""><img class="img-responsive" src="<?php the_post_thumbnail_url(); ?>" /></a>
+				        <div class="carousel-caption"><h2><?php the_content(); ?></h2></div>
+				      </div>
+				      <?php endwhile; endif; ?>
+				      <?php wp_reset_postdata(); ?>
+				    </div>
+			  	</div><!-- End Carousel -->
+			</div>
 		</div>
 	</div>
 	<?php if(have_posts() ) : while(have_posts() ) : the_post(); ?>
 	<div class="row">
-		<div class="col-md-7">
+		<div class="col-md-8">
 			<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>"><img class="img-responsive"" src="<?php the_post_thumbnail_url(); ?>" /></a>
+			
 			</div>
 			<h1><?php the_title(); ?></h1>
 			<p><?php the_content(); ?></p>
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-4">
 			<div class="side-bar">
 				<?php dynamic_sidebar('BV-Widget'); ?>
 			</div>
@@ -60,5 +62,25 @@
 			</div>
 		</div>
 	</div>
+
+	<?php $args = array('post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC'); $the_query = new WP_Query( $args ); ?>
+	
+	<div class="row">
+		<h1 class="site-header">Recent News</h1>
+		<?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+		<div class="post-content">
+			<div class="col-md-3">
+				<div class="post-thumbnail"><a href="<?php the_permalink(); ?>"><img class="img-responsive"" src="<?php the_post_thumbnail_url(); ?>" /></a>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<p><?php the_content(); ?></p>
+				<a href="<?php the_permalink(); ?>">Read More</a>
+			</div>
+			<hr />
+		</div>
+	</div>
+	<?php endwhile; endif; ?>
+	<?php wp_reset_postdata(); ?>
 </main>
 <?php get_footer(); ?>

@@ -3,7 +3,7 @@
 <main class="site-content">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="post-thumbnail"><a href="<?php the_permalink(); ?>"><img class="img-responsive"" src="<?php the_post_thumbnail_url(); ?>" /></a>
+			<div class="post-thumbnail"><a href="<?php the_permalink(); ?>"><img class="img-responsive" src="<?php the_post_thumbnail_url(); ?>" /></a>
 		</div>
 	</div>
 	<div class="row">
