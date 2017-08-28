@@ -16,6 +16,16 @@
 				      <?php endwhile; endif; ?>
 				      <?php wp_reset_postdata(); ?>
 				    </div>
+
+				    <!-- Left and right controls -->
+					  <a class="left carousel-control" href="#homepage-carousel" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#homepage-carousel" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
 			  	</div><!-- End Carousel -->
 			</div>
 		</div>
