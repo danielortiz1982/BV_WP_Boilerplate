@@ -62,35 +62,3 @@ function create_home_slider_post_type(){
 
 }
 // end of create_home_slider_post_type
-
-
-add_action('init', 'create_dog_post_type');
-function create_dog_post_type(){
-
-    register_post_type( 'dog',
-            array(
-                'labels' => array(
-                    'name' => 'Cutino Dogs',
-                    'singular_name' => 'Dog',
-                    'add_new' => 'Add New Image',
-                    'add_new_item' => 'Add New Dog',
-                    'edit' => 'Edit',
-                    'edit_item' => 'Edit Dog',
-                    'new_item' => 'New Dog',
-                    'view' => 'View Dog',
-                    'view_item' => 'View Dog',
-                    'search_items' => 'Search Dogs',
-                    'not_found' => 'No Dogs found',
-                    'not_found_in_trash' => 'No Dogs found in Trash',    
-                ),
-                'public' => true,
-                'menu_position' => 15,
-                'supports' => array('title', 'editor', 'thumbnail'),
-                'taxonomies' => array( '' ),
-                'menu_icon' => 'dashicons-images-alt2',
-                'has_archive' => true
-            )
-        );
-
-}
-// end of create_dog_post_type
