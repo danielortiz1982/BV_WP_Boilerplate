@@ -44,7 +44,11 @@ function BV_Boilerplate_Widgets_Init(){
 add_action('wp_enqueue_scripts', 'BV_Boilerplate_Scripts');
 function BV_Boilerplate_Scripts(){
 	wp_enqueue_style( 'BV-Boilerplate-style-reset', get_stylesheet_uri() );
+	wp_enqueue_style( 'BV-Boilerplate-bootstrapCSS', get_template_directory_uri() . '/less/css/bootstrap.min.css' );
+	wp_enqueue_style( 'BV-Boilerplate-fontawesome', get_template_directory_uri() . '/less/css/font-awesome.min.css' );
 	wp_enqueue_style( 'BV-Boilerplate-style', get_template_directory_uri() . '/less/css/style.min.css' );
+	wp_enqueue_script('BV-Boilerplate-jQuery', get_template_directory_uri() . '/js/lib/jquery.min.js', array(), false, true);
+	wp_enqueue_script('BV-Boilerplate-bootstrapJS', get_template_directory_uri() . '/js/lib/bootstrap.min.js', array(), false, true);
 	wp_enqueue_script('BV-Boilerplate-mainjs', get_template_directory_uri() . '/js/main.js', array(), false, true);
 }
 // end of BV_Boilerplate_Scripts
